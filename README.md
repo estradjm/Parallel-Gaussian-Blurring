@@ -3,7 +3,7 @@
 A C program that takes a .ppm image and applies a gaussian blur.
 
 To compile:
-`make compile
+`make compile`
 
 To clean up object files and executables:
 `make clean`
