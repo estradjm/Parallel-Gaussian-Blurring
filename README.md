@@ -2,15 +2,15 @@
 
 A C program that takes a .ppm image and applies a gaussian blur.
 
-To compile:
+#### To compile:
 `make compile`
 
-To clean up object files and executables:
+#### To clean up object files and executables:
 `make clean`
 
 
 
-#### Example Usage:
+### Example Usage:
 Original image name: in.ppm
 
 Result image name: out.ppm
