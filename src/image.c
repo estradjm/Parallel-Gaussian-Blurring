@@ -4,61 +4,61 @@
 #include <string.h>
 
 IMAGE *image_load(const char *image_name) {
-	//Declare image struct
+	// Declare image struct
 	IMAGE *image = (IMAGE*) malloc( sizeof(IMAGE) );
 
-	//Open file
+	// Open file
 	FILE *file = fopen(image_name, "r");
 	if(!file)
 		return NULL;
 
-	//Read image info
+	// Read image info
 	fscanf(file, "%s", image->header);
 	fscanf(file, "%d %d %d", &(image->width), &(image->height), &(image->color_depth));
 
-	//Alocate memory for pixels
+	// Alocate memory for pixels
 	image->pixels = (pixel**) malloc(image->height * sizeof(pixel*));
 	int i, j;
 	for(i = 0; i < image->height; i++)
 		image->pixels[i] = (pixel*) malloc(image->width * sizeof(pixel));
 
-	//Read pixels
+	// Read pixels
 	for(i = 0; i < image->height; i++)
 		for(j = 0; j < image->width; j++)
 			fscanf(file, "%c%c%c", &(image->pixels[i][j].R), &(image->pixels[i][j].G), &(image->pixels[i][j].B));
 
-	//Close file
+	// Close file
 	fclose(file);
 
 	return image;
 }
 
 int image_write(IMAGE *image, const char *file_name) {
-	//Open file
+	// Open file
 	FILE *file = fopen(file_name, "w");
 	if(!file)
 		return 0;
 	
-	//Write image info
+	// Write image info
 	fprintf(file, "%s\n%d %d\n%d", image->header, image->width, image->height, image->color_depth);
 
-	//Write pixels
+	// Write pixels
 	int i, j;
 	for(i = 0; i < image->height; i++)
 		for(j = 0; j < image->width; j++)
 			fprintf(file, "%c%c%c", image->pixels[i][j].R, image->pixels[i][j].G, image->pixels[i][j].B);
 
-	//Write EOF
+	// Write EOF
 	fprintf(file, "%d", EOF);
 
-	//Close file
+	// Close file
 	fclose(file);
 
 	return 1;
 }
 
 IMAGE *image_create_blank(IMAGE *source) {
-	//Declare
+	// Declare
 	IMAGE *image = (IMAGE*) malloc( sizeof(IMAGE) );
 
 	//Copy info(except pixels)
@@ -67,7 +67,7 @@ IMAGE *image_create_blank(IMAGE *source) {
 	image->width = source->width;
 	image->color_depth = source->color_depth;
 
-	//Alloc mem for pixels
+	// Allocate memory for pixels
 	image->pixels = (pixel**) malloc(image->height * sizeof(pixel*));
 	int i;
 	for(i = 0; i < image->height; i++)
@@ -77,7 +77,7 @@ IMAGE *image_create_blank(IMAGE *source) {
 }
 
 void image_free(IMAGE *image) {
-	//Free pixels
+	// Free image pixels
 	int i;
 	for(i = 0; i < image->height; i++)
 		free(image->pixels[i]);
