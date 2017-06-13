@@ -4,7 +4,7 @@
 #include <string.h>
 
 IMAGE *image_load(const char *image_name) {
-	// Declare image struct
+	// Declare image structure
 	IMAGE *image = (IMAGE*) malloc( sizeof(IMAGE) );
 
 	// Open file
@@ -83,10 +83,11 @@ void image_free(IMAGE *image) {
 		free(image->pixels[i]);
 	free(image->pixels);
 
-	//Free image
+	// Free image
 	free(image);
 }
 
+// apply_to_pixel is a private function (local scope in image.c; used in apply_filer.c)
 void apply_to_pixel(int x, int y, IMAGE *original, IMAGE *result, FILTER *filter) {
 	if(x<filter->radius || y<filter->radius || x>=original->width-filter->radius || y>=original->height-filter->radius) {
 		result->pixels[y][x] = original->pixels[y][x];
