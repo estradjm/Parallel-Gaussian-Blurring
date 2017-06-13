@@ -18,7 +18,7 @@ To run this program, you can either specify the arguements in the command lline 
 
 `Original image name: in.ppm`
 
-Result image name: out.ppm`
+`Result image name: out.ppm`
 
 `Radius: 1`
 
