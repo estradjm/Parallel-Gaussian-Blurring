@@ -28,3 +28,5 @@ OR
 
 `./blur in.ppm out.ppm 1 1`
 
+## Exercise:
+#### Port as much of the code as your team can can to GPUs using OpenACC, and CUDA.
