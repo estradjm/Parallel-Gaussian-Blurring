@@ -88,7 +88,6 @@ void image_free(IMAGE *image) {
 }
 
 void apply_to_pixel(int x, int y, IMAGE *original, IMAGE *result, FILTER *filter) {
-	//TODO: nu mai ignora marginile
 	if(x<filter->radius || y<filter->radius || x>=original->width-filter->radius || y>=original->height-filter->radius) {
 		result->pixels[y][x] = original->pixels[y][x];
 		return;
