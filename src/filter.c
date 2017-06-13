@@ -33,6 +33,7 @@ FILTER *filter_create_avg(int radius) {
 	return filter;	
 }
 
+/* Private function (local scope only in filter.c)*/
 double gauss_2d(int x, int y, double sigma) {
 	double result = 1.0 / (2 * PI * sigma * sigma);
 	result *= exp(-(x*x+y*y)/(2 * sigma * sigma));
