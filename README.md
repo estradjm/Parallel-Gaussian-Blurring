@@ -16,7 +16,7 @@ To run this program, you can either specify the arguements in the command lline 
 
 `./blur`
 
-`Original image name: in.ppm`
+`Original image name: visit0000.ppm`
 
 `Result image name: out.ppm`
 
@@ -26,7 +26,7 @@ To run this program, you can either specify the arguements in the command lline 
 
 OR 
 
-`./blur in.ppm out.ppm 1 1`
+`./blur visit0000.ppm out.ppm 1 1`
 
 ## Exercise:
 #### Port as much of the code as your team can can to GPUs using OpenACC, and CUDA.
