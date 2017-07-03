@@ -29,4 +29,4 @@ OR
 `./blur visit0000.ppm out.ppm 1 1`
 
 ## Exercise:
-#### Port as much of the code as your team can can to GPUs using OpenACC, and CUDA.
+#### Port as much of the code as your team can to GPUs using OpenACC, and/or CUDA.
