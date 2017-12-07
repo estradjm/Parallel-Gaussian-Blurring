@@ -1,4 +1,6 @@
 # Parallel Gaussian Blurring
+[![AUR](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/estradjm/Parallel-Gaussian-Blurring/blob/master/LICENSE.md) 
+
 
 A C program that takes a .ppm image and applies a gaussian blur.
 
